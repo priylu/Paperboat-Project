@@ -1,0 +1,186 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap');
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsla(0, 90%, 31%, 0.871);
+    --first-color-alt: hsl(2, 28%, 83%);
+    --title-color: hsl(180, 100%, 100%);
+    --text-color: hsl(150, 11%, 96%);
+    --body-color: hsl(102, 100%, 19%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font:  'Roboto Condensed', sans-serif;
+    --second-font:'Roboto Slab',serif;
+    --biggest-font-size: 3.5rem;
+    --normal-font-size: 1.2rem;  
+  }
+  
+  /* Responsive typography */
+  @media screen and (max-width: 824px) {
+    :root {
+      --biggest-font-size: 3.5rem.25rem
+      --normal-font-size: 1.2rem; 
+    }
+  }
+  
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  img{
+    max-width: 150%;
+    height:auto;
+  }
+ 
+  /*=============== REUSABLE CSS CLASSES ===============*/
+  .container {
+    max-width: 1024px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  
+  .main {
+    overflow: hidden; /* For the animations */
+  }
+  /*=============== HEADER & NAV ===============*/
+  header {
+    background-color:hsl(102, 100%, 19%);
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    vertical-align: right;
+}
+
+.navigation a {
+    margin-left: 20px;
+    color: #000000;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.navigation a:hover {
+    background-color: rgb(255, 253, 253);
+    color: #000000;
+}
+
+/* Active link */
+.active-link{
+  color: var(--first-color);
+}
+/*=============== HOME ===============*/
+.home,
+.home__container{
+  position: relative;
+  left: 5rem;
+}
+
+.home__container{
+  padding-top: 8rem;
+  height: 80vh;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.home__tittle{
+  font-size: var(--biggest-font-size);
+  font-family: var(--second-font);
+  color: var(--title-color);
+  margin-bottom: -.75rem;
+}
+
+.home__tittle span{
+  display: block;
+  color: var(--first-color);
+}
+
+.home__description,
+.home__button{
+  font-weight: 600;
+}
+
+.home__description{
+  color:var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+.home__button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem .25rem;
+  box-shadow: 0 8px 20px hsla(28, 100%, 45%, 0.97);
+}
+
+.home__button:hover{
+  background-color: var(--first-color-alt);
+}
+
+.home__images{
+  position: relative;
+  width: 325px;
+  height: 290px; 
+}
+
+.home__images img{
+  position: absolute;
+}
+
+.home__liquid{
+  max-width: initial;
+  width: 490px;
+  left: 3.8rem;
+  top: -4rem;
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+
+/* For medium devices */
+@media screen and (min-width: 750px){
+  
+  .home__container{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    align-self: center;
+    column-gap: 4rem;
+    padding-top: 4rem;
+  }
+}
+
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 7px;
+  text-align: center;
+}
